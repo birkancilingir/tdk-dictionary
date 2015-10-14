@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TdkDictionary.ResourceDictionaries"
+    xmlns:converter="using:TdkDictionary.Common.Converters"
+    x:Name="Converters">
+
+    <converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converter:InvertedBooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" />    
+    <converter:ContentLengthToVisibilityConverter x:Key="ContentLengthToVisibilityConverter" />
+    <converter:IntegerToStringFormatter x:Key="IntegerToStringFormatter" />    
+
+</ResourceDictionary>

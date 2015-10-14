@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>10b5a5ff-37d6-419f-9e98-1d488e2cabd8</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TdkDictionary</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\AlertService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\BindableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Converters\InvertedBooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Converters\ContentLengthToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Converters\IntegerToStringFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ExceptionHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ProjectConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RichTextBlockHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\WrapPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\DictionaryServiceConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\DictionaryServiceFilters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\IDictionaryDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\DictionaryDataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\Model\SearchResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TdkDataService\Model\Word.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AboutViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\tr-TR\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)ResourceDictionaries\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ResourceDictionaries\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ResourceDictionaries\Themes\Default.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
