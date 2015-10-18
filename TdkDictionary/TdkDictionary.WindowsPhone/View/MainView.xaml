@@ -48,11 +48,6 @@
             <ComboBox x:Name="ComboBoxSearchType" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
                       ItemsSource="{Binding MatchTypes}" DisplayMemberPath="Value" 
                       SelectedItem="{Binding MatchType, Mode=TwoWay}">
-                <i:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="SelectionChanged">
-                        <core:InvokeCommandAction Command="{Binding SearchTypeSelectionChangedCommand}" />
-                    </core:EventTriggerBehavior>
-                </i:Interaction.Behaviors>
             </ComboBox>
 
             <TextBox Name="FilterTextBox" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Margin="0" Text="{Binding Path=SearchString,Mode=TwoWay}"/>
@@ -65,7 +60,7 @@
                 <ProgressRing Name="QuestionListProgressBar" IsEnabled="True" IsActive="True"
                           Foreground="{StaticResource PhoneForegroundBrush}" Background="{StaticResource PhoneBackgroundBrush}"
                           Visibility="{Binding IsResultsLoading, Converter={StaticResource BooleanToVisibilityConverter}}"
-                          Height="10" Width="10"  />
+                          Height="10" Width="10"  />                
                 <TextBlock x:Uid="TextBlockNoWordFound" Name="TextBlockNoWordFound"                       
                            TextWrapping="WrapWholeWords" Style="{StaticResource TextBlockStyle}"
                            Visibility="{Binding IsNoResultFound, Converter={StaticResource BooleanToVisibilityConverter}}" />
@@ -82,13 +77,14 @@
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,9.5" >
                                 <TextBlock Style="{StaticResource TextBlockSubtitleStyle}">
-                                    <Run Text="{Binding Name}" FontSize="22" Foreground="{StaticResource PhoneForegroundBrush}"/>
+                                    <Run Text="{Binding Name}" FontSize="22" Foreground="{StaticResource PhoneForegroundBrush}" FontWeight="Bold"/>
                                     <Run Text="{Binding Origin}" />
                                 </TextBlock>
                                 <RichTextBlock TextWrapping="WrapWholeWords" Style="{StaticResource RichTextBlockStyle}"
-                                           IsTextSelectionEnabled="False" common:RichTextBlockHelper.Html="{Binding Description}" />
-                                <TextBlock Style="{StaticResource TextBlockStyle}">
-                                    <Run Text="{Binding DictionaryName}" />
+                                               IsTextSelectionEnabled="False" common:RichTextBlockHelper.Html="{Binding Description}"
+                                               Visibility="{Binding Description.Length, Converter={StaticResource ContentLengthToVisibilityConverter}}"/>
+                                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,2.5,0,0" >
+                                    <Run Text="{Binding DictionaryName}" FontWeight="Bold"/>
                                     <Run Text="{Binding Year}" />
                                 </TextBlock>
                             </StackPanel>                          
@@ -107,7 +103,8 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" x:Uid="TextBlockSuggestionsFound" Name="TextBlockSuggestionsFound"                       
-                               TextWrapping="WrapWholeWords" Style="{StaticResource SuggestionTextBlockStyle}"/>
+                               TextWrapping="WrapWholeWords" Style="{StaticResource SuggestionTextBlockStyle}"
+                               Visibility="{Binding IsPartialMatch, Converter={StaticResource InvertedBooleanToVisibilityConverter}}" />
                     <GridView Name="SuggestionsGridView"
                               Grid.Row="1"
                               Margin="0,9.5,0,0"
@@ -117,11 +114,12 @@
                               SelectionMode="None"
                               IsItemClickEnabled="True">
                         <GridView.ItemTemplate>
-                            <DataTemplate>                            
-                                <Border BorderThickness="0,0,0,1" BorderBrush="{StaticResource PhoneForegroundBrush}"
-                                        Background="{StaticResource PhoneBackgroundBrush}" Margin="0,0,19,9.5">
-                                    <TextBlock Text="{Binding Name}" Margin="0,0,0,0" Style="{StaticResource SuggestionTextBlockStyle}" />
-                                </Border>
+                            <DataTemplate>
+                                <TextBlock Margin="0,0,19,9.5" Style="{StaticResource SuggestionTextBlockStyle}" >
+                                    <Underline>
+                                        <Run Text="{Binding Name}" />
+                                    </Underline>
+                                </TextBlock>
                             </DataTemplate>
                         </GridView.ItemTemplate>
 

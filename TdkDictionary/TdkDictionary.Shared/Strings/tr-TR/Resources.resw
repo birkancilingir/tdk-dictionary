@@ -162,23 +162,23 @@
   <data name="TextBlockTitleVersionHistory.Text" xml:space="preserve">
     <value>Sürüm Tarihçesi</value>
   </data>
-  <data name="TextBlockVersion1_0_0_0.Text" xml:space="preserve">
-    <value>v1.0.0.0</value>
+  <data name="TextBlockVersion1_1_0_0.Text" xml:space="preserve">
+    <value>v1.1.0.0</value>
   </data>
-  <data name="TextBlockVersion1_0_0_0_1.Text" xml:space="preserve">
+  <data name="TextBlockVersion1_1_0_0_1.Text" xml:space="preserve">
     <value>- İlk yazım</value>
   </data>
   <data name="ApplicationName" xml:space="preserve">
     <value>TDK Sözlük</value>
   </data>
-  <data name="ErrorCancel" xml:space="preserve">
-    <value>İptal</value>
+  <data name="ErrorNo" xml:space="preserve">
+    <value>Hayır</value>
   </data>
   <data name="ErrorHeader" xml:space="preserve">
     <value>TDK Sözlük Hata</value>
   </data>
-  <data name="ErrorOk" xml:space="preserve">
-    <value>Tamam</value>
+  <data name="ErrorYes" xml:space="preserve">
+    <value>Evet</value>
   </data>
   <data name="ErrorWarning" xml:space="preserve">
     <value>Uygulama son çalışmasında hatalı bir şekilde sonlandı. Bu hatayı yazılımcıya bildirmek ister misiniz?</value>
@@ -197,5 +197,14 @@
   </data>
   <data name="InternetNotAvailableErrorMessage" xml:space="preserve">
     <value>Arama yapabilmek için internet bağlantınızın olması gerekmektedir.</value>
+  </data>
+  <data name="TextBlockVersion1_2_0_0.Text" xml:space="preserve">
+    <value>v1.2.0.0</value>
+  </data>
+  <data name="TextBlockVersion1_2_0_0_1.Text" xml:space="preserve">
+    <value>- Görsel düzenlemeler</value>
+  </data>
+  <data name="TextBlockVersion1_2_0_0_2.Text" xml:space="preserve">
+    <value>- Genel hataların giderilmesi</value>
   </data>
 </root>

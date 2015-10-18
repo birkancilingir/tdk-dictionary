@@ -98,6 +98,17 @@ namespace TdkDictionary.ViewModel
             }
         }
 
+        private Boolean _isPartialMatch = false;
+
+        public Boolean IsPartialMatch
+        {
+            get { return this._isPartialMatch; }
+            set
+            {
+                SetProperty(ref this._isPartialMatch, value);
+            }
+        }
+
         private ObservableCollection<Word> _words;
 
         public ObservableCollection<Word> Words
@@ -111,23 +122,6 @@ namespace TdkDictionary.ViewModel
         #endregion
 
         #region Commands
-        private RelayCommand _searchTypeSelectionChangedCommand;
-
-        public RelayCommand SearchTypeSelectionChangedCommand
-        {
-            get
-            {
-                return _searchTypeSelectionChangedCommand
-                    ?? (_searchTypeSelectionChangedCommand = new RelayCommand(() =>
-                    {
-                        Debug.WriteLine("SearchTypeSelectionChangedCommand");
-                        SearchString = String.Empty;
-                        IsNoResultFound = false;
-                    })
-                );
-            }
-        }
-
         private RelayCommand _listWordsCommand;
 
         public RelayCommand ListWordsCommand
@@ -204,14 +198,22 @@ namespace TdkDictionary.ViewModel
             if (Words != null)
                 Words.Clear();
             IsNoResultFound = false;
+            IsSuggestion = false;
 
             BigTurkishDictionaryFilter filter = new BigTurkishDictionaryFilter();
             filter.SearchString = name;
             filter.SearchId = id;
+
             if (MatchType.Key.Equals("FullMatch"))
+            {
                 filter.MatchType = BigTurkishDictionaryFilter.MatchTypeFilter.FULL_MATCH;
+                IsPartialMatch = false;
+            }
             else
+            {
                 filter.MatchType = BigTurkishDictionaryFilter.MatchTypeFilter.PARTIAL_MATCH;
+                IsPartialMatch = true;
+            }
 
             try
             {

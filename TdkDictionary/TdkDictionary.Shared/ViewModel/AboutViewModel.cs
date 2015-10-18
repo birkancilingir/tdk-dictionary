@@ -70,7 +70,8 @@ namespace TdkDictionary.ViewModel
                         {
                             ResourceLoader resourceLoader = new ResourceLoader();                           
                             args.Request.Data.Properties.Title = resourceLoader.GetString("ApplicationName");
-                            args.Request.Data.SetWebLink(new Uri("http://windowsphone.com/s?appId=" + Windows.ApplicationModel.Store.CurrentApp.AppId));
+                            args.Request.Data.SetWebLink(Windows.ApplicationModel.Store.CurrentApp.LinkUri);
+                            // http://windowsphone.com/s?appid=39579393-b162-488d-a1b2-1857373603e0
                         };
                         DataTransferManager.ShowShareUI();
                     })
