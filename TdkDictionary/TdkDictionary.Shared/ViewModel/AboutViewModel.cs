@@ -69,9 +69,9 @@ namespace TdkDictionary.ViewModel
                         manager.DataRequested += (sender, args) =>
                         {
                             ResourceLoader resourceLoader = new ResourceLoader();                           
-                            args.Request.Data.Properties.Title = resourceLoader.GetString("ApplicationName");
-                            args.Request.Data.SetWebLink(Windows.ApplicationModel.Store.CurrentApp.LinkUri);
-                            // http://windowsphone.com/s?appid=39579393-b162-488d-a1b2-1857373603e0
+                            args.Request.Data.Properties.Title = resourceLoader.GetString("ApplicationName");                            
+                            //args.Request.Data.SetWebLink(Windows.ApplicationModel.Store.CurrentApp.LinkUri); // Returns invalid URI
+                            args.Request.Data.SetWebLink(new Uri("http://windowsphone.com/s?appid=39579393-b162-488d-a1b2-1857373603e0"));
                         };
                         DataTransferManager.ShowShareUI();
                     })

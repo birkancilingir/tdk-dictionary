@@ -17,6 +17,9 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using TdkDictionary.Common;
 using TdkDictionary.View;
+using System.Collections.ObjectModel;
+using TdkDictionary.TdkDataService.Model;
+using TdkDictionary.ViewModel;
 
 // The Universal Hub Application project template is documented at http://go.microsoft.com/fwlink/?LinkID=391955
 
@@ -42,7 +45,9 @@ namespace TdkDictionary
             this.Suspending += this.OnSuspending;
             this.UnhandledException += App_UnhandledException;
 
-            SuspensionManager.KnownTypes.Add(typeof(TdkDictionary.TdkDataService.Model.Word));
+            SuspensionManager.KnownTypes.Add(typeof(MainViewModel.MatchTypeItem));
+            SuspensionManager.KnownTypes.Add(typeof(ObservableCollection<Word>));
+            SuspensionManager.KnownTypes.Add(typeof(Word));
 
             RequestedTheme = ApplicationTheme.Light;
         }
