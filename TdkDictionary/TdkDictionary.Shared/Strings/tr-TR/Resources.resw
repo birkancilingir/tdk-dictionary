@@ -207,4 +207,13 @@
   <data name="TextBlockVersion1_2_0_0_2.Text" xml:space="preserve">
     <value>- Genel hataların giderilmesi</value>
   </data>
+  <data name="TextBlockVersion1_3_0_0.Text" xml:space="preserve">
+    <value>v1.3.0.0</value>
+  </data>
+  <data name="TextBlockVersion1_3_0_0_1.Text" xml:space="preserve">
+    <value>- Uygulama arka plana geçerken oluşan hata giderildi</value>
+  </data>
+  <data name="TextBlockVersion1_3_0_0_2.Text" xml:space="preserve">
+    <value>- Paylaşım linki düzeltildi</value>
+  </data>
 </root>
