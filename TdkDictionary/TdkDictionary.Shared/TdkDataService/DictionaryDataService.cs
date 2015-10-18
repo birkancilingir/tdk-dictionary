@@ -161,7 +161,7 @@ namespace TdkDictionary.TdkDataService
                                     word.Id = id;
                                 else
                                     word.Id = null;
-                                word.Name = node.InnerText.Replace("&nbsp;", "");
+                                word.Name = node.InnerText.Replace("&nbsp;", "").Trim();
                                 word.Origin = String.Empty;
                                 word.Description = String.Empty;
                                 word.DictionaryName = String.Empty;
@@ -212,7 +212,7 @@ namespace TdkDictionary.TdkDataService
                                                 word.Id = id;
                                             else
                                                 word.Id = null;
-                                            word.Name = node.InnerText.Replace("&nbsp;", "");
+                                            word.Name = node.InnerText.Replace("&nbsp;", "").Trim();
                                             word.Origin = String.Empty;
                                             word.Description = String.Empty;
                                             word.DictionaryName = String.Empty;

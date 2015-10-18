@@ -48,8 +48,8 @@ namespace TdkDictionary.Common
 
                         var dialog = new MessageDialog(resourceLoader.GetString("ErrorWarning"));
                         dialog.Title = resourceLoader.GetString("ErrorHeader");
-                        dialog.Commands.Add(new UICommand { Label = resourceLoader.GetString("ErrorOk"), Id = 0 });
-                        dialog.Commands.Add(new UICommand { Label = resourceLoader.GetString("ErrorCancel"), Id = 1 });
+                        dialog.Commands.Add(new UICommand { Label = resourceLoader.GetString("ErrorYes"), Id = 0 });
+                        dialog.Commands.Add(new UICommand { Label = resourceLoader.GetString("ErrorNo"), Id = 1 });
                         var res = await dialog.ShowAsync();
 
                         if ((int)res.Id == 0)
