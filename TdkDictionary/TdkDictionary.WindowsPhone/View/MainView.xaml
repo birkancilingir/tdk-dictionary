@@ -83,7 +83,8 @@
                                 <RichTextBlock TextWrapping="WrapWholeWords" Style="{StaticResource RichTextBlockStyle}"
                                                IsTextSelectionEnabled="False" common:RichTextBlockHelper.Html="{Binding Description}"
                                                Visibility="{Binding Description.Length, Converter={StaticResource ContentLengthToVisibilityConverter}}"/>
-                                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,2.5,0,0" >
+                                <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,2.5,0,0"
+                                           Visibility="{Binding DictionaryName.Length, Converter={StaticResource ContentLengthToVisibilityConverter}}">
                                     <Run Text="{Binding DictionaryName}" FontWeight="Bold"/>
                                     <Run Text="{Binding Year}" />
                                 </TextBlock>

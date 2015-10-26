@@ -216,4 +216,10 @@
   <data name="TextBlockVersion1_3_0_0_2.Text" xml:space="preserve">
     <value>- Paylaşım linki düzeltildi</value>
   </data>
+  <data name="TextBlockVersion1_4_0_0.Text" xml:space="preserve">
+    <value>v1.4.0.0</value>
+  </data>
+  <data name="TextBlockVersion1_4_0_0_1.Text" xml:space="preserve">
+    <value>- Görsel düzenlemeler</value>
+  </data>
 </root>

@@ -163,6 +163,7 @@ namespace TdkDictionary.ViewModel
             }
         }
 
+#if WINDOWS_PHONE_APP
         private RelayCommand _navigateToAboutCommand;
 
         public RelayCommand NavigateToAboutCommand
@@ -180,6 +181,7 @@ namespace TdkDictionary.ViewModel
                     );
             }
         }
+#endif
         #endregion
 
         private async void ListWords(Nullable<int> id, String name)
