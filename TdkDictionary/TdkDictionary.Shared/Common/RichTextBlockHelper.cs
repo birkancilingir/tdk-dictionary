@@ -154,7 +154,12 @@ namespace TdkDictionary.Common
                     return GenerateUnderline(node);
                 case "#text":
                     if (!string.IsNullOrWhiteSpace(node.InnerText))
-                        return new Run() { Text = CleanText(node.InnerText) };
+                    {
+                        if (node.ParentNode.Name == "i" || node.ParentNode.Name == "I")
+                            return new Run() { Text = CleanText(node.InnerText) + " " };
+                        else
+                            return new Run() { Text = CleanText(node.InnerText) };
+                    }                        
                     break;
             }
             return null;

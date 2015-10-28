@@ -60,6 +60,7 @@
                     <StackPanel Grid.Row="4" Margin="0,0,0,10">
                         <TextBlock x:Uid="TextBlockVersion1_4_0_0"  Style="{StaticResource TextBlockSubtitleStyle}" FontWeight="Bold" />
                         <TextBlock x:Uid="TextBlockVersion1_4_0_0_1" Style="{StaticResource TextBlockStyle}" />
+                        <TextBlock x:Uid="TextBlockVersion1_4_0_0_2" Style="{StaticResource TextBlockStyle}" />
                     </StackPanel>
                     
                     <StackPanel Grid.Row="5" Margin="0,0,0,10">

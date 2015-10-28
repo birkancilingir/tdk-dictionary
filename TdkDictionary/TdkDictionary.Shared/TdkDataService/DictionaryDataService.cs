@@ -128,9 +128,17 @@ namespace TdkDictionary.TdkDataService
                     
             using (StreamReader reader = new StreamReader(new MemoryStream(Encoding.UTF8.GetBytes(responseBody))))
             {
+                String responseHtml = reader.ReadToEnd();
+
+                // Clear illegal tags as they cause errors while parsing
+                responseHtml = responseHtml.Replace("< ar", "ar");
+                responseHtml = responseHtml.Replace("<ar", "ar");
+                responseHtml = responseHtml.Replace("< Ar", "Ar");
+                responseHtml = responseHtml.Replace("<Ar", "Ar");
+
                 HtmlDocument doc = new HtmlDocument();
                 doc.OptionFixNestedTags = true;
-                doc.LoadHtml(reader.ReadToEnd());
+                doc.LoadHtml(responseHtml);
 
                 HtmlNode rootNode = doc.DocumentNode
                     .Descendants("div")
@@ -150,8 +158,6 @@ namespace TdkDictionary.TdkDataService
                         if (nodes.Count() > 0)
                         {
                             // Check for suggestions
-                            isSuggestion = true;
-
                             foreach (HtmlNode node in nodes)
                             {
                                 Word word = new Word();
@@ -223,6 +229,9 @@ namespace TdkDictionary.TdkDataService
                                     }
                                 }
                             }
+
+                            if (words.Count > 0)
+                                isSuggestion = true;
                         }
                     }
                     else
@@ -267,8 +276,6 @@ namespace TdkDictionary.TdkDataService
                         else
                         {
                             // Check for suggestions
-                            isSuggestion = true;
-
                             List<HtmlNode> nodes = doc.DocumentNode
                                     .Descendants()
                                     .Where(node => (node.Name == "a"
@@ -286,6 +293,9 @@ namespace TdkDictionary.TdkDataService
 
                                 words.Add(word);
                             }
+
+                            if (words.Count > 0)
+                                isSuggestion = true;
                         }
                     }
                 }
