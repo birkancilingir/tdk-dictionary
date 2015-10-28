@@ -222,4 +222,7 @@
   <data name="TextBlockVersion1_4_0_0_1.Text" xml:space="preserve">
     <value>- Görsel düzenlemeler</value>
   </data>
+  <data name="TextBlockVersion1_4_0_0_2.Text" xml:space="preserve">
+    <value>- Türkiye Türkçesi Ağızları Sözlüğü kısımlarında bulunan hatalı gösterimler düzeltildi.</value>
+  </data>
 </root>
