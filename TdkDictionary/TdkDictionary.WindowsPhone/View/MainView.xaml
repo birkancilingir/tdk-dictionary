@@ -50,7 +50,7 @@
                       SelectedItem="{Binding MatchType, Mode=TwoWay}">
             </ComboBox>
 
-            <TextBox Name="FilterTextBox" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Margin="0" Text="{Binding Path=SearchString,Mode=TwoWay}"/>
+            <TextBox Name="FilterTextBox" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Margin="0" Text="{Binding Path=SearchString,Mode=TwoWay}" InputScope="Search"/>
 
             <Button x:Uid="ButtonWordSearch" Grid.Row="1" Grid.Column="1" FontFamily="Segoe UI Symbol" FontWeight="Bold"
                     VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="58"
